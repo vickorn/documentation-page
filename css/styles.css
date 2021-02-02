@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 10px;
+    font-family: "roboto", cursive;
+    min-width: 550px;
+}
+
+#container > * {    
+    box-shadow: 1px -1px 5px rgba(0, 0, 0, 0.75);
+}
+
+#container {
+    display: grid;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    gap: 5px;
+    grid-template-areas: 
+        "header  header"
+        "navbar  navbar"
+        "main    main"
+        "footer  footer";
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 100px 50px 100% 100px;
+}
+
+@media (min-width: 800px) {
+
+    body {
+        font-size: 1.2rem;
+    }
+    #container {        
+        display: grid;
+        width: 90%;
+        max-width: 1000px;
+        margin: auto;
+        gap: 5px;
+        grid-template-areas: 
+            "navbar header"
+            "navbar main"
+            "navbar footer";
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 100px 100% 100px;
+    }
+
+    #navbar {
+        font-size: 18px;
+        position: fixed;
+        text-align: left;
+        width: 200px;
+        height: 100%;
+        background-color: darkmagenta;
+ 
+    }
+
+    #navbar header {   
+        display: flex; 
+        flex-direction: column;
+        width: 90%;        
+        height: 100%;
+        margin: auto;
+        justify-content: left !important;
+    }
+
+    .nav__links {
+        display: flex;
+        flex-direction: column;
+        padding-top: 5px;
+    }
+
+
+}
+
+#header {
+    grid-area: header;
+    background-color: bisque;
+}
+
+#navbar {
+    grid-area: navbar;
+    display: flex;
+    background-color: darkmagenta;
+}
+
+#navbar header {    
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__links {    
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    margin: auto 5px;
+    padding-top: 5px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+
+#main-doc {
+    text-align: left;
+    padding-left: 20px;
+    grid-area: main;
+    background-color: brown;
+}
+
+.main-section {
+    margin: 15px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+}
+
+.main-section > * {
+    margin-bottom: 10px;
+}
+
+#footer {
+    grid-area: footer;
+    background-color: darkgreen;
+}
